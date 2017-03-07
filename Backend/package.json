@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for project store ubru ubonratchathani",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Farkram Developer",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mssql": "^3.3.0"
+  }
+}
