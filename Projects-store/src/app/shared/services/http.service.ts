@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/rx';
-// import { SessionFactory } from '../factories/session.factory';
-// import { AppFactory } from '../factories/application.factory';
-// import { Url } from '../factories/url.factory';
+import { SessionFactory } from '../factories/session.factory';
+import { AppFactory } from '../factories/application.factory';
+import { Url } from '../factories/url.factory';
 declare const btc_config: { domain: string };
+
 @Injectable()
 export class HttpService {
 

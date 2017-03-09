@@ -1,0 +1,17 @@
+$placeholder-color: #A6AAB2;
+$placeholder-color-error: #C49D9D;
+body,
+html {
+    font-family: 'Prompt', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #F6F7F9;
+    [data-loading] {
+        color: gray !important;
+        cursor: no-drop !important;
+        text-decoration: none !important;
+    }
+}
