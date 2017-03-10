@@ -15,8 +15,8 @@ export class SessionFactory {
 		catch (e) { }
 		return value || null;
 	}
-	static remove(key: string): void { sessionStorage.removeItem(key); }
-	static removeAll(): void { sessionStorage.clear(); }
+	static remove(key: string): void { sessionStorage.removeItem(key); localStorage.removeItem(key); }
+	static removeAll(): void { sessionStorage.clear(); localStorage.clear(); }
 
 	// Setup authentication
 	private static authenticationKey = 'bitcointh.ssd';
