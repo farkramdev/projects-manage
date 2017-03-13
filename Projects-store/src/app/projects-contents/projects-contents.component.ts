@@ -14,10 +14,9 @@ export class ProjectsContentsComponent implements OnInit {
     this.initialize_dataload();
   }
 
-
-  private initialize_dataload() {
-   SessionFactory.remove('DataTables_projectsdata_/');
-    var dataSource = [      
+  public initialize_dataload() {
+    SessionFactory.remove('DataTables_projectsdata_/');
+    var dataSource = [
       {
         "name": "Garrett Winters",
         "position": "Accountant",
@@ -41,7 +40,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -72,7 +71,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -103,7 +102,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -134,7 +133,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -165,7 +164,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -196,7 +195,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -227,7 +226,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -258,7 +257,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -289,7 +288,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -320,7 +319,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -351,7 +350,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -382,7 +381,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -413,7 +412,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -444,7 +443,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -475,7 +474,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -506,7 +505,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -537,7 +536,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -568,7 +567,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -599,7 +598,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -630,7 +629,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -661,7 +660,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -692,7 +691,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -723,7 +722,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -754,7 +753,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -785,7 +784,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -816,7 +815,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -847,7 +846,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -878,7 +877,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -909,7 +908,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -940,7 +939,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -971,7 +970,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1002,7 +1001,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1033,7 +1032,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1064,7 +1063,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1095,7 +1094,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1126,7 +1125,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1157,7 +1156,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1188,7 +1187,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1219,7 +1218,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1250,7 +1249,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1281,7 +1280,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1312,7 +1311,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1343,7 +1342,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1374,7 +1373,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1405,7 +1404,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1436,7 +1435,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1467,7 +1466,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1498,7 +1497,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1529,7 +1528,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1560,7 +1559,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1591,7 +1590,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1622,7 +1621,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1653,7 +1652,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1684,7 +1683,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1715,7 +1714,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1746,7 +1745,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1777,7 +1776,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1808,7 +1807,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1839,7 +1838,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1870,7 +1869,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1901,7 +1900,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1932,7 +1931,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1963,7 +1962,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -1994,7 +1993,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -2025,7 +2024,7 @@ export class ProjectsContentsComponent implements OnInit {
         "start_date": "2012/03/29",
         "office": "Edinburgh",
         "extn": "6224"
-      },{
+      }, {
         "name": "Tiger Nixon",
         "position": "System Architect",
         "salary": "$320,800",
@@ -2485,7 +2484,7 @@ export class ProjectsContentsComponent implements OnInit {
 
     $(document).ready(() => {
       $('#projectsdata').DataTable({
-        "oLanguage": {          
+        "oLanguage": {
           "sProcessing": "กำลังดำเนินการ...",
           "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
           "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
@@ -2502,6 +2501,7 @@ export class ProjectsContentsComponent implements OnInit {
           }
         },
         "pagingType": "full_numbers",
+        "responsive": true,
         "processing": true,
         "info": true,
         "stateSave": true,
@@ -2516,8 +2516,7 @@ export class ProjectsContentsComponent implements OnInit {
           { "data": "position" },
           { "data": "office" },
           { "data": "extn" },
-          { "data": "start_date" }
-          ,
+          { "data": "start_date" },
           {
             "data": (data) => {
               return '<button class="btn btn-danger" type="button">' + data.name + 'Delete</button>'
