@@ -3,8 +3,8 @@ const mssql = require('mssql');
 var config = {
     user: 'sa',
     password: '123456',
-    server: 'ADDLINK-NB004',
-    database: 'AdventureWorks2014',
+    server: 'DESKTOP-BI6HIGL',
+    database: 'projects',
     port: 1433,
     pool: {
         max: 10,
