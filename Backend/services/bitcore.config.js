@@ -1,1 +1,0 @@
-exports.BWS_INSTANCE_URL = 'http://61.47.7.211:3232/bws/api/';
