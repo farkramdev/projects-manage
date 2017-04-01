@@ -13,7 +13,8 @@ var config = {
     }
 };
 
-module.exports = new mssql.Connection(config, (err) => {
-    if (err) { console.error('Error connecting: ' + err); return; }
-    console.log('Database connected');
-});
+var request = null;
+
+// connect to your database
+mssql.connect(config);
+module.exports = new mssql.Request();

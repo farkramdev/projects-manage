@@ -1,5 +1,7 @@
 const database = require('../services/database');
 const bcrypt = require('bcrypt-nodejs');
+var util = require("util");
+
 const table = 'Student';
 
 class StudentC {
@@ -33,11 +35,20 @@ class StudentC {
     // }
 
     static insertStudent(req, callback) {
-        console.log(database.connect());
-        // database.query(`insert into Student(studentID, studentFname, studentLname, PhoneNo) values(?,?,?,?)`, [req.body.studentID, req.body.studentFname, req.body.studentLname, req.body.PhoneNo], (err, result) => {
-        //     console.log(result);
-        //     callback(result);
-        // });
+        //console.log(req.body);
+        let v = {
+            "studentID": "001",
+            "studentFName": "FarkramDev",
+            "studentLName": "LastnameDev",
+            "PhoneNo": "089555051"
+        };
+        //let sql = `INSERT INTO Student(studentID, studentFName, studentLName, PhoneNo) VALUES(` + util.format("%s, '%s', %s, %s ", req.body.studentID, req.body.studentFName, req.body.studentLName, req.body.PhoneNo) + `) `;
+        let sql = `INSERT INTO Student(studentID, studentFName, studentLName, PhoneNo) VALUES(req.body.studentID, req.body.studentFName, req.body.studentLName, req.body.PhoneNo) `;
+        //let val = util.format("(%s, '%s', %s, %s) ", req.body.studentID, req.body.studentFname, req.body.studentLname, req.body.PhoneNo);
+        database.query(sql, (err, result) => {
+            console.log(err);
+            callback(result);
+        });
     }
 
 }
