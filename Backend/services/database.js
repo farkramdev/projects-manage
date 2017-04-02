@@ -13,7 +13,9 @@ var config = {
     }
 };
 
-exports.executeSql = function(sql, callback) {
+exports.httpMsgsFormat = "HTML";
+
+exports.query = function(sql, callback) {
     var conn = new mssql.Connection(config);
     conn.connect().then(function() {
         var req = new mssql.Request(conn);

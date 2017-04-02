@@ -1,9 +1,9 @@
 const passport = require('passport');
 
 // controllers
-//const Authentication = require('./controllers/authentication');
+// const Authentication = require('./controllers/authentication');
 // const Account = require('./controllers/account');
-//const App = require('./controllers/app');
+// const App = require('./controllers/app');
 // const Sell = require('./controllers/tran_sell');
 // const sell_without = require('./controllers/sell_without');
 // const receive = require('./controllers/receive')
@@ -12,7 +12,7 @@ const passport = require('passport');
 // const provinces = require('./controllers/provinces');
 // const code_phone = require('./controllers/code_phone');
 // const send = require('./controllers/send');
-//const balance = require('./controllers/balance');
+// const balance = require('./controllers/balance');
 
 const student = require('./controllers/student');
 
@@ -25,7 +25,9 @@ const student = require('./controllers/student');
 
 module.exports = function(app) {
 
-    app.post('/student_post', student.InsertStudent);
+    app.post('/student_add', student.InsertStudent);
+    app.get('/student', student.getStudent);
+    app.put('/student/:studentID', student.UpdateStudent);
 
     // Mogate
     // app.get('/test', test.testpage);
@@ -39,7 +41,7 @@ module.exports = function(app) {
     // app.post('/get_dashboard/search_date', requireAuth, App.Search_dashboard);
 
     // // Base
-    // app.post('/account', requireAuth, Account.account);
+    //app.post('/account', requireAuth, Account.account);
     // app.put('/account/name', requireAuth, Account.edit_name);
     // // app.put('/account/edit/email', requireAuth, Account.edit_email);
     // app.put('/account/phone', requireAuth, Account.edit_phone);
