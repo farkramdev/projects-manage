@@ -13,8 +13,19 @@ var config = {
     }
 };
 
-var request = null;
-
-// connect to your database
-mssql.connect(config);
-module.exports = new mssql.Request();
+exports.executeSql = function(sql, callback) {
+    var conn = new mssql.Connection(config);
+    conn.connect().then(function() {
+        var req = new mssql.Request(conn);
+        req.query(sql).then(function(recordset) {
+            conn.close();
+            callback(recordset);
+        }).catch(function(err) {
+            console.log(err);
+            callback(null, err);
+        });
+    }).catch(function(err) {
+        console.log(err);
+        callback(null, err);
+    });
+};

@@ -14,7 +14,7 @@ const passport = require('passport');
 // const send = require('./controllers/send');
 //const balance = require('./controllers/balance');
 
-const std = require('./controllers/Student');
+const student = require('./controllers/student');
 
 
 // const passportService = require('./services/passport');
@@ -25,7 +25,7 @@ const std = require('./controllers/Student');
 
 module.exports = function(app) {
 
-    app.post('/student_post', std.student)
+    app.post('/student_post', student.InsertStudent);
 
     // Mogate
     // app.get('/test', test.testpage);

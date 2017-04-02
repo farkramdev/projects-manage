@@ -1,6 +1,12 @@
-const m_student = require('../models/m_student');
-exports.student = (req, res, next) => {
-    m_student.insertStudent(req, function(callback) {
-        res.send({ data: callback });
-    })
+//const m_student = require('../models/m_students');
+
+exports.InsertStudent = (req, res, next) => {
+
+    console.log("ppp");
+
+
+    // m_student.add(req, (callback) => {
+
+    //     res.send({ data: callback });
+    // });
 }
