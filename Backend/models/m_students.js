@@ -6,34 +6,37 @@ var TABLE = 'Student';
 exports.getList = (req, callback) => {
     db.query(`SELECT * FROM ${TABLE}`, (data, err) => {
         if (err) {
-            callback(err);
+            callback({ status: 500 });
         } else {
             callback(data);
         }
     });
 };
 
-exports.findOneStudent = (req, resp, studentId) => {
-    db.query(`SELECT * FROM ${TABLE} WHERE studentID=` + studentId, (data, err) => {
-        if (err) {
-            callback(err);
-        } else {
-            callback(data);
-        }
-    });
+exports.studentFindOne = (req, callback) => {
+    try {
+        db.query(`SELECT * FROM ${TABLE} WHERE studentID=` + util.format('%s', req.params.id), (data, err) => {
+            if (err) {
+                callback({ status: 500 });
+            } else {
+                callback(data);
+            }
+        });
+    } catch (ex) {
+        callback({ status: 500 });
+    }
 };
 
 exports.add = (req, callback) => {
     try {
         if (!req.body) throw new Error("Input not valid");
-        var data = req.body; //JSON.parse(req.body);
-
-        if (data) { //add more validations if necessary
-            var sql = "INSERT INTO " + TABLE + " (studentID, studentFName, studentLName, PhoneNo) VALUES ";
+        var data = req.body;
+        if (data) {
+            var sql = `INSERT INTO ${TABLE} (studentID, studentFName, studentLName, PhoneNo) VALUES `;
             sql += util.format("('%s', '%s', '%s', '%s') ", data.studentID, data.studentFName, data.studentLName, data.PhoneNo);
             db.query(sql, (data, err) => {
                 if (err) {
-                    callback(err);
+                    callback({ status: 500 });
                 } else {
                     callback({ status: 200 });
                 }
@@ -42,14 +45,15 @@ exports.add = (req, callback) => {
             throw new Error("Input not valid");
         }
     } catch (ex) {
-        callback({ status: 500, error: ex });
+        callback({ status: 500 });
     }
 };
 
 exports.update = (req, callback) => {
     try {
         if (!reqBody) throw new Error("Input not valid");
-        var data = req.body; //JSON.parse(req.body);
+
+        var data = req.body;
 
         if (data) {
             if (!data.studentID) throw new Error("studentID not provided");
@@ -90,12 +94,12 @@ exports.update = (req, callback) => {
     }
 };
 
-exports.delete = function(req, resp, reqBody) {
+exports.delete = (req, callback) => {
     try {
-        if (!reqBody) throw new Error("Input not valid");
-        var data = JSON.parse(reqBody);
+        if (!req.body) throw new Error("Input not valid");
+        var data = req.body;
         if (data) {
-            if (!data.Empno) throw new Error("Empno not provided");
+            if (!data.studentID) throw new Error("studentID not provided");
 
             var sql = `DELETE FROM ${TABLE} WHERE studentID = ` + data.studentID;
 

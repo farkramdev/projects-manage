@@ -6,6 +6,12 @@ exports.getStudent = (req, res, next) => {
     });
 }
 
+exports.studentFindOne = (req, res, next) => {
+    m_student.studentFindOne(req, (callback) => {
+        res.send({ data: callback });
+    });
+}
+
 exports.InsertStudent = (req, res, next) => {
     m_student.add(req, (callback) => {
         res.send({ data: callback });

@@ -25,9 +25,11 @@ const student = require('./controllers/student');
 
 module.exports = function(app) {
 
-    app.post('/student_add', student.InsertStudent);
     app.get('/student', student.getStudent);
-    app.put('/student/:studentID', student.UpdateStudent);
+    app.get('/student/:id', student.studentFindOne);
+
+    app.post('/student_add', student.InsertStudent);
+    app.put('/student', student.UpdateStudent);
 
     // Mogate
     // app.get('/test', test.testpage);

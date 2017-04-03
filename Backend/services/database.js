@@ -3,7 +3,7 @@ const mssql = require('mssql');
 var config = {
     user: 'sa',
     password: '123456',
-    server: 'ADDLINK-NB004',
+    server: 'DESKTOP-BI6HIGL',
     database: 'projects',
     port: 1433,
     pool: {
@@ -15,18 +15,20 @@ var config = {
 
 exports.httpMsgsFormat = "HTML";
 
-exports.query = function(sql, callback) {
+exports.query = (sql, callback) => {
     var conn = new mssql.Connection(config);
-    conn.connect().then(function() {
+    conn.connect().then(() => {
         var req = new mssql.Request(conn);
-        req.query(sql).then(function(recordset) {
-            conn.close();
-            callback(recordset);
-        }).catch(function(err) {
-            console.log(err);
-            callback(null, err);
-        });
-    }).catch(function(err) {
+        req.query(sql)
+            .then((recordset) => {
+                conn.close();
+                callback(recordset);
+            })
+            .catch((err) => {
+                console.log(err);
+                callback(null, err);
+            });
+    }).catch((err) => {
         console.log(err);
         callback(null, err);
     });
