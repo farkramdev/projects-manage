@@ -3,7 +3,7 @@ const mssql = require('mssql');
 var config = {
     user: 'sa',
     password: '123456',
-    server: 'ADDLINK-NB004', //ADDLINK-NB004
+    server: 'DESKTOP-BI6HIGL', //ADDLINK-NB004
     database: 'projects',
     port: 1433,
     pool: {

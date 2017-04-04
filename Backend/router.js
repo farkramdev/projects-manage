@@ -21,11 +21,11 @@ const student = require('./controllers/student');
 // const test = require('./controllers/test');
 const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignin = passport.authenticate('local', { session: false });
-const unsigned_buy = require('./controllers/buy_without_signed');
+//const unsigned_buy = require('./controllers/buy_without_signed');
 
 module.exports = function(app) {
 
-    app.get('/student', requireAuth, student.getStudent);
+    app.get('/student', student.getStudent);
     app.get('/student/:id', student.studentFindOne);
     app.post('/student_add', student.InsertStudent);
     app.put('/student', student.UpdateStudent);
