@@ -7,7 +7,7 @@ exports.getStudent = (req, res, next) => {
 }
 
 exports.studentFindOne = (req, res, next) => {
-    m_student.studentFindOne(req, (callback) => {
+    m_student.findOneId(req, (callback) => {
         res.send({ data: callback });
     });
 }

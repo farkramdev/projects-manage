@@ -13,9 +13,10 @@ exports.getList = (req, callback) => {
     });
 };
 
-exports.studentFindOne = (req, callback) => {
+exports.findOneId = (req, callback) => {
     try {
-        db.query(`SELECT * FROM ${TABLE} WHERE studentID=` + util.format('%s', req.params.id), (data, err) => {
+        console.log(req);
+        db.query(`SELECT * FROM ${TABLE} WHERE studentId=` + util.format('%s', req.params.id), (data, err) => {
             if (err) {
                 callback({ status: 500 });
             } else {
@@ -32,8 +33,8 @@ exports.add = (req, callback) => {
         if (!req.body) throw new Error("Input not valid");
         var data = req.body;
         if (data) {
-            var sql = `INSERT INTO ${TABLE} (studentID, studentFName, studentLName, PhoneNo) VALUES `;
-            sql += util.format("('%s', '%s', '%s', '%s') ", data.studentID, data.studentFName, data.studentLName, data.PhoneNo);
+            var sql = `INSERT INTO ${TABLE} (studentId, studentFName, studentLName, PhoneNo) VALUES `;
+            sql += util.format("('%s', '%s', '%s', '%s') ", data.studentId, data.studentFName, data.studentLName, data.PhoneNo);
             db.query(sql, (data, err) => {
                 if (err) {
                     callback({ status: 500 });
@@ -56,7 +57,7 @@ exports.update = (req, callback) => {
         var data = req.body;
 
         if (data) {
-            if (!data.studentID) throw new Error("studentID not provided");
+            if (!data.studentId) throw new Error("studentId not provided");
 
             var sql = `UPDATE ${TABLE} SET `;
 
@@ -77,7 +78,7 @@ exports.update = (req, callback) => {
             if (!isDataProvided) throw new Error("No data provided to update");
 
             sql = sql.slice(0, -1); //remove last comma
-            sql += ` WHERE studentID = ` + data.studentID;
+            sql += ` WHERE studentId = ` + data.studentId;
 
             db.query(sql, function(data, err) {
                 if (err) {
@@ -99,9 +100,9 @@ exports.delete = (req, callback) => {
         if (!req.body) throw new Error("Input not valid");
         var data = req.body;
         if (data) {
-            if (!data.studentID) throw new Error("studentID not provided");
+            if (!data.studentId) throw new Error("studentId not provided");
 
-            var sql = `DELETE FROM ${TABLE} WHERE studentID = ` + data.studentID;
+            var sql = `DELETE FROM ${TABLE} WHERE studentId = ` + data.studentId;
 
             db.query(sql, function(data, err) {
                 if (err) {
