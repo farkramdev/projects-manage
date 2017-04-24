@@ -26,6 +26,7 @@ exports.signup = (req, res, next) => {
     const password = req.body.password;
     const re_password = req.body.re_password;
 
+
     if (password !== re_password) { return res.status(500).send({ message: 'password not match.' }); }
 
     let res_valid = new validation.validationModel(req.body, {
@@ -34,10 +35,13 @@ exports.signup = (req, res, next) => {
         re_password: [validation.validators.required, validation.validators.password]
     });
 
+
+    //console.log(res_valid.valid);
+
     if (res_valid.valid === true) {
 
         // See if a user with the given email exists
-        Student.findOne({ email: email }, function(err, existingUser) {
+        Student.findOneEmail({ email: email }, function(err, existingUser) {
             if (err) { return next(err); }
 
             // If a user with email does exist, return an error
@@ -46,32 +50,32 @@ exports.signup = (req, res, next) => {
             }
 
             // If a user with email does NOT exist, create and save user record
-            const user = new User({
-                email: email,
-                password: password
-            });
+            // const user = new User({
+            //     email: email,
+            //     password: password
+            // });
 
-            user.save(function(err, result) {
-                // create wallet from bitcore
-                bitcore_app.Createbitcore(email, (info, data) => {
-                    // create bitcoin address
-                    bitcore_app.CreateAddress(data, (addr) => {
+            // user.save(function(err, result) {
+            //     // create wallet from bitcore
+            //     bitcore_app.Createbitcore(email, (info, data) => {
+            //         // create bitcoin address
+            //         // bitcore_app.CreateAddress(data, (addr) => {
 
-                        // create wallet obj
-                        let wallet_obj = {
-                            acc_id: result.id,
-                            wallet_id: info.wallet.id,
-                            wallet_obj: JSON.stringify(data)
-                        };
+            //         //     // create wallet obj
+            //         //     // let wallet_obj = {
+            //         //     //     acc_id: result.id,
+            //         //     //     wallet_id: info.wallet.id,
+            //         //     //     wallet_obj: JSON.stringify(data)
+            //         //     // };
 
-                        // Add wallet    
-                        m_bitcore.addWallet(wallet_obj, (err, resWallet) => {
-                            //Repond to request indicating the user was created
-                            res.send({ token: tokenForUser(result) });
-                        });
-                    });
-                });
-            });
+            //         //     // Add wallet    
+            //         //     // m_bitcore.addWallet(wallet_obj, (err, resWallet) => {
+            //         //     //     //Repond to request indicating the user was created
+            //         //     //     res.send({ token: tokenForUser(result) });
+            //         //     // });
+            //         // });
+            //     });
+            // });
         });
     } else {
         return res.status(502).send({ message: 'The email address that you\'ve entered doesn\'t match any account.' });

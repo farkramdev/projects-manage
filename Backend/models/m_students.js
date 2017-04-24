@@ -15,9 +15,28 @@ exports.getList = (req, callback) => {
 
 exports.findOneId = (req, callback) => {
     try {
-        console.log(req);
         db.query(`SELECT * FROM ${TABLE} WHERE studentId=` + util.format('%s', req.params.id), (data, err) => {
             if (err) {
+                callback({ status: 500 });
+            } else {
+                callback(data);
+            }
+        });
+    } catch (ex) {
+        callback({ status: 500 });
+    }
+};
+
+exports.findOneEmail = (req, callback) => {
+    try {
+
+        let sql = `SELECT email FROM ${TABLE} WHERE email=` + util.format("%s", req.email);
+        //let sql = `SELECT email FROM ${TABLE} WHERE email= ''`
+        console.log(sql);
+
+        db.query(sql, (data, err) => {
+            if (err) {
+                console.log('Error ******');
                 callback({ status: 500 });
             } else {
                 callback(data);
