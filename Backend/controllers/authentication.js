@@ -36,18 +36,25 @@ exports.signup = (req, res, next) => {
     });
 
 
-    //console.log(res_valid.valid);
+    console.log(res_valid.valid);
 
     if (res_valid.valid === true) {
 
         // See if a user with the given email exists
-        Student.findOneEmail({ email: email }, function(err, existingUser) {
-            if (err) { return next(err); }
+        Student.findOneEmail({ email: email }, function(err, existUser) {
 
-            // If a user with email does exist, return an error
-            if (existingUser) {
-                return res.status(502).send({ message: 'Email is in use' });
-            }
+            console.log(err, existUser);
+
+            //return res.send(existUser);
+
+            // if (err) { return next(err); }
+
+
+            // console.log(JSON.parse(existingUser));
+            // // If a user with email does exist, return an error
+            // if (existingUser) {
+            //     return res.status(502).send({ message: 'Email is in use' });
+            // }
 
             // If a user with email does NOT exist, create and save user record
             // const user = new User({

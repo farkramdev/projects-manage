@@ -1,7 +1,7 @@
-var db = require("../services/database");
-var httpMsgs = require("../services/httpMsgs");
-var util = require("util");
-var TABLE = 'Student';
+const db = require("../services/database");
+const httpMsgs = require("../services/httpMsgs");
+const util = require("util");
+const TABLE = 'Student';
 
 exports.getList = (req, callback) => {
     db.query(`SELECT * FROM ${TABLE}`, (data, err) => {
@@ -29,21 +29,16 @@ exports.findOneId = (req, callback) => {
 
 exports.findOneEmail = (req, callback) => {
     try {
-
-        let sql = `SELECT email FROM ${TABLE} WHERE email=` + util.format("%s", req.email);
-        //let sql = `SELECT email FROM ${TABLE} WHERE email= ''`
-        console.log(sql);
-
+        let sql = `SELECT email FROM ${TABLE} WHERE email=` + "'" + util.format('%s', req.email) + "'";
         db.query(sql, (data, err) => {
             if (err) {
-                console.log('Error ******');
-                callback({ status: 500 });
+                callback(err, null);
             } else {
                 callback(data);
             }
         });
     } catch (ex) {
-        callback({ status: 500 });
+        callback(err, null);
     }
 };
 

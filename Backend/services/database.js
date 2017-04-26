@@ -1,7 +1,6 @@
 const mssql = require('mssql');
 const config = require('./config');
 
-
 exports.httpMsgsFormat = config.httpMsgsFormat;
 
 exports.query = (sql, callback) => {
