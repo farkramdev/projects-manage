@@ -9,14 +9,14 @@ declare let $;
 })
 export class ProjectsContentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private session:AuthenticationService) { }
 
   ngOnInit() {
     this.initialize_dataload();
   }
 
   public initialize_dataload() {
-    AuthenticationService.prototype.storage.remove('DataTables_projectsdata_/');
+   this.session.storage.removeItem('DataTables_projectsdata_/');
     var dataSource = [
       {
         "name": "Garrett Winters",

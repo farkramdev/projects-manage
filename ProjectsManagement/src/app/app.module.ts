@@ -9,7 +9,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ValidationDirective } from './directives/validation.directive';
 import { ScrollbarDirective } from './directives/scrollbar.directive';
-import { HomeComponent } from './components/home/home.component';
+import { SigninComponent } from './components/signin/signin.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HomeComponent } from './components/home/home.component';
     ProjectsContentsComponent,
     ValidationDirective,
     ScrollbarDirective,
-    HomeComponent
+    SigninComponent
   ],
   imports: [
     BrowserModule,
