@@ -1,4 +1,5 @@
-import { SessionFactory } from './../shared/factories/session.factory';
+import { AuthenticationService } from './../../services/authentication.service';
+
 import { Component, OnInit } from '@angular/core';
 declare let $;
 @Component({
@@ -15,7 +16,7 @@ export class ProjectsContentsComponent implements OnInit {
   }
 
   public initialize_dataload() {
-    SessionFactory.remove('DataTables_projectsdata_/');
+    AuthenticationService.prototype.storage.remove('DataTables_projectsdata_/');
     var dataSource = [
       {
         "name": "Garrett Winters",

@@ -1,6 +1,9 @@
+import { UrlConfig } from './config/url.config';
+import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
+const Url = UrlConfig;
 const routes: Routes = [
-	// { path: Url.Home, component: HomeComponent },
+	{ path: Url.Home, component: HomeComponent },
 	// { path: Url.Signup, component: SignupComponent, canActivate: [RequireSignin] },
 	// { path: Url.Sellwithout, component: SellwithoutComponent },
 	// { path: Url.SellOrSign, component: SellOrSigninComponent },

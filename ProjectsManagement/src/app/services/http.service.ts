@@ -1,95 +1,80 @@
-import { Url } from './../class/url.class';
-import { Router } from '@angular/router';
-import { SessionFactory } from './../class/session.class';
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptionsArgs } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/rx';
-
-declare const btc_config: { domain: string };
+import { Http, Response, RequestOptionsArgs, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import { environment } from '../../environments/environment';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable()
 export class HttpService {
+    constructor(private http: Http, private authenticated: AuthenticationService) { }
 
-	constructor(private http: Http, private router:Router) { }
-	public domain = btc_config.domain;
+    // Request to server by GET method : ส่งข้อมูลไปยัง server ผ่าน method GET
+    requestGet(url: string): Observable<Response> {
+        return this.onProcessRequest(this.http.get(this.convertURL(url), { headers: this.onRequestHeaders() }));
+    }
 
-	// GET Request
-	public requestGet(url: string): Observable<Response> {
-		return this.http.get(`${this.domain + url}`, this.onRequestHeader())
-			.map(res => this.onMapping(res))
-			.do(res => this.onProcess(res))
-			.catch(res => this.onErrorHandle(res));
-	}
+    // Request to server by POST method : ส่งข้อมูลไปยัง server ผ่าน method POST
+    requestPost(url: string, model: any): Observable<Response> {
+        return this.onProcessRequest(this.http.post(this.convertURL(url), model, { headers: this.onRequestHeaders() }));
+    }
 
-	// POST Request
-	public requestPost(url: string, data: any): Observable<Response> {
-		return this.http.post(`${this.domain + url}`, data, this.onRequestHeader())
-			.map(res => this.onMapping(res))
-			.do(res => this.onProcess(res))
-			.catch(res => this.onErrorHandle(res));
-	}
+    // Request to server by PUT method : ส่งข้อมูลไปยัง server ผ่าน method PUT
+    requestPut(url: string, model: any): Observable<Response> {
+        return this.onProcessRequest(this.http.put(this.convertURL(url), model, { headers: this.onRequestHeaders() }));
+    }
 
-	// PUT Request overide by Farkram Dev
-	public requestPut(url: string, data: any): Observable<Response> {
-		return this.http.put(`${this.domain + url}`, data, this.onRequestHeader())
-			.map(res => this.onMapping(res))
-			.do(res => this.onProcess(res))
-	}
+    // Request to server by DELETE method : ส่งข้อมูลไปยัง server ผ่าน method DELETE
+    requestDelete(url: string): Observable<Response> {
+        return this.onProcessRequest(this.http.delete(this.convertURL(url), { headers: this.onRequestHeaders() }));
+    }
 
-	// Mapping data
-	private onMapping(response: Response) {
-		var responseData: any = {};
-		try { responseData = response.json(); }
-		catch (e) { responseData = response.text(); }
-		return responseData;
-	}
+    // Process map data : ตรวจสอบข้อมูลและแปลงเป็น Json 
+    private onMapData(response: Response): ResponseModel {
+        let responseData: any = {};
+        try { responseData.data = response.json(); }
+        catch (e) { responseData.data = response.text(); }
+        responseData.status = response.status;
+        responseData.statusText = response.statusText;
+        responseData.response = response;
+        return responseData;
+    }
 
-	// Process data
-	private onProcess(response: Response): void {
-		try {
-			var _response = <any>response;
-			if (_response.token) SessionFactory.setAuthentication(_response.token);
-		}
-		catch (e) { }
-	}
+    // Error handle : ส่ง error ออกไปเมื่อ server เกิดข้อผิดพลาด
+    private onErrorHandle(response: any): Observable<Response> {
+        return Observable.throw(response);
+    }
 
-	// Error handle
-	private onErrorHandle(response: Response): Observable<Response> {
-		let errorText = '';
-		switch (response.status) {
-			case 500:
-				errorText = 'Server Error.';
-				break;
-			case 401:
-				errorText = 'Authorization Required.';
-				if (SessionFactory.getAuthentication) {
-					SessionFactory.removeAll();
-					this.router.navigate(['/', Url.Signin]);
-				}
-				break;
-			case 404:
-				errorText = 'Not Found.';
-				break
-			case 422:
-				errorText = response.statusText;
-				break;
-			case 0:
-			default:
-				errorText = 'Connect network error.';
-				break;
-		}
-		return Observable.throw(response);
-	}
+    // Request Headers : ส่งค่า Header เพื่อให้ Server รู้ว่าเราต้องการอะไร และเพื่อยืนยันตัวตน
+    private onRequestHeaders(): Headers {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json; charset=utf-8');
+        if (this.authenticated.getAuthenticated)
+            headers.append('Authorization', this.authenticated.getAuthenticated);
+        return headers;
+    }
 
-	// Send Request headers
-	private onRequestHeader(): RequestOptionsArgs {
-		var headers = new Headers();
-		// send header for authentication
-		if (SessionFactory.getAuthentication)
-			headers.append('Authorization', SessionFactory.getAuthentication);
-		// request header content-type application/json
-		headers.append('Content-Type', 'application/json');
-		return { headers };
-	}
+    // Convert Url : แปลงค่า Url เป็นค่าที่เรากำหนดไว้
+    private convertURL(url: string): string {
+        return url[0] == '/' ? this.address + url : this.address + '/' + url;
+    }
+
+    // Process request of http : เปลี่ยนการทำงานหลังจากที่มีการ Request ไปที่ server
+    private onProcessRequest(httpProcess: Observable<Response>): Observable<Response> {
+        return httpProcess
+            .map(res => this.onMapData(res))
+            .catch(res => this.onErrorHandle(res));
+    }
+
+    // Check domain is production or development : เช็คว่าที่อยู่เป็นอะไร ถ้าเรา build เป็น production หรือ development
+
+    // private address: string = environment.production ? '/api' : 'http://localhost:24480';
+    private address: string = 'http://dev.9t.com';
+}
+
+// Custom response class : สร้างคลาส Response ขึ้นมาเอง
+class ResponseModel {
+    status: number;
+    statusText: string;
+    data: any;
+    response: Response;
 }
