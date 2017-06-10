@@ -1,4 +1,4 @@
-import { routing } from './app.routing';
+import { RoutingModule } from './app.routing';
 import { NgModule } from '@angular/core';
 import { ProjectsContentsComponent } from './components/projects-contents/projects-contents.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -10,6 +10,11 @@ import { AppComponent } from './app.component';
 import { ValidationDirective } from './directives/validation.directive';
 import { ScrollbarDirective } from './directives/scrollbar.directive';
 import { SigninComponent } from './components/signin/signin.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
+import { HomeComponent } from './components/home/home.component';
+import { SubjectsComponent } from './components/subjects/subjects.component';
+import { AdvisorComponent } from './components/advisor/advisor.component';
+import { StudentsComponent } from './components/students/students.component';
 
 
 @NgModule({
@@ -19,11 +24,16 @@ import { SigninComponent } from './components/signin/signin.component';
     ProjectsContentsComponent,
     ValidationDirective,
     ScrollbarDirective,
-    SigninComponent
+    SigninComponent,
+    DepartmentsComponent,
+    HomeComponent,
+    SubjectsComponent,
+    AdvisorComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,
-    routing
+    RoutingModule
   ],
   providers: [
     HttpService,

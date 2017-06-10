@@ -1,8 +1,17 @@
-import { AppComponent } from './app.component';
+import { StudentsComponent } from './components/students/students.component';
+import { AdvisorComponent } from './components/advisor/advisor.component';
+import { SubjectsComponent } from './components/subjects/subjects.component';
+import { HomeComponent } from './components/home/home.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
 import { UrlConfig } from './config/url.config';
 import { Routes, RouterModule } from '@angular/router';
 const Url = UrlConfig;
 const routes: Routes = [
+	{ path: Url.Home, component: HomeComponent },
+	{ path: Url.Department, component: DepartmentsComponent },
+	{ path: Url.Subject, component: SubjectsComponent },
+	{ path: Url.Advisor, component: AdvisorComponent },
+	{ path: Url.Student, component: StudentsComponent },
 	// { path: Url.Home, component: AppComponent },
 	// { path: Url.Signup, component: SignupComponent, canActivate: [RequireSignin] },
 	// { path: Url.Sellwithout, component: SellwithoutComponent },
@@ -25,7 +34,6 @@ const routes: Routes = [
 	// { path: Url.Send, component: SendComponent, canActivate: [RequireAuth] },
 	// { path: Url.Dashboard, component: DashboardComponent, canActivate: [RequireAuth] },
 	// { path: Url.Receive, component: ReceiveComponent, canActivate: [RequireAuth] },
-	// { path: '*', component: SigninComponent, pathMatch: 'full' }
+	{ path: '**', redirectTo: Url.Home, pathMatch: 'full' }
 ];
-
-export const routing = RouterModule.forRoot(routes);
+export const RoutingModule = RouterModule.forRoot(routes);

@@ -1,7 +1,10 @@
 import { environment } from '../../environments/environment';
 export const UrlConfig = {
     Home: '',
-    // Clients: 'clients',
+    Department: 'departments',
+    Subject: 'subjects',
+    Advisor: 'advisors',
+    Student: 'students',
     // Packages: 'packages',
     // Payments: 'payments',
     // Reports: 'reports',

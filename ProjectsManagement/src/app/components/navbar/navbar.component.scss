@@ -1,3 +1,16 @@
+label {
+    color: #000;
+}
+
+.navbar-navigate {
+    margin-bottom: 2px;
+}
+
+.navbar-fixed-bottom,
+.navbar-fixed-top {
+    position: initial;
+}
+
 .navbar-brand img {
     max-width: 100%;
     height: 50px;
@@ -286,7 +299,7 @@ ul.nav.navbar-nav.navbar-right:last-child {
     min-width: 250px;
     padding: 14px 14px 0;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, 1);
 }
 
 #login-dp .help-block {
@@ -294,7 +307,7 @@ ul.nav.navbar-nav.navbar-right:last-child {
 }
 
 #login-dp .bottom {
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, 1);
     border-top: 1px solid #ddd;
     clear: both;
     padding: 14px;
@@ -321,8 +334,4 @@ ul.nav.navbar-nav.navbar-right:last-child {
         background-color: inherit;
         border-top: 0 none;
     }
-}
-
-label {
-    color: #000;
 }

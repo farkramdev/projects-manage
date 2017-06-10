@@ -1,6 +1,6 @@
 .container {
     .header {
-        margin-top: 4%;
+        // margin-top: 4%;
         text-align: center;
         .logo {
             width: 100%;
@@ -9,22 +9,22 @@
     }
     @media screen and (min-width: 768px) {
         .header {
-            margin-top: 7%;
+            // margin-top: 7%;
         }
     }
     @media screen and (max-width: 500px) {
         .header {
-            margin-top: 14%;
+            // margin-top: 14%;
         }
     }
     @media screen and (max-width: 360px) {
         .header {
-            margin-top: 16%;
+            // margin-top: 16%;
         }
     }
     @media screen and (max-width: 320px) {
         .header {
-            margin-top: 18%;
+            // margin-top: 18%;
         }
     }
 }
