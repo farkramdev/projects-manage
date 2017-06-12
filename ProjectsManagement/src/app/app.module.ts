@@ -1,3 +1,4 @@
+import { AddstudentComponent } from './components/students/addstudent/addstudent.component';
 import { RoutingModule } from './app.routing';
 import { NgModule } from '@angular/core';
 import { ProjectsContentsComponent } from './components/projects-contents/projects-contents.component';
@@ -29,7 +30,8 @@ import { StudentsComponent } from './components/students/students.component';
     HomeComponent,
     SubjectsComponent,
     AdvisorComponent,
-    StudentsComponent
+    StudentsComponent,
+    AddstudentComponent
   ],
   imports: [
     BrowserModule,

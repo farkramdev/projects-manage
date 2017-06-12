@@ -1,3 +1,12 @@
-button {
-    float: right;
-}
+    h5 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    .btn-add {
+        margin-top: 0.2em;
+        margin-left: -11em;
+        position: absolute;
+        cursor: pointer;
+        z-index: 999;
+    }
