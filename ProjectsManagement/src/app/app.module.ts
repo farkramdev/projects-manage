@@ -16,6 +16,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
 import { AdvisorComponent } from './components/advisor/advisor.component';
 import { StudentsComponent } from './components/students/students.component';
+import { ManageExaminationComponent } from './components/manage-examination/manage-examination.component';
+import { ManageProjectsComponent } from './components/manage-projects/manage-projects.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { StudentsComponent } from './components/students/students.component';
     SubjectsComponent,
     AdvisorComponent,
     StudentsComponent,
-    AddstudentComponent
+    AddstudentComponent,
+    ManageExaminationComponent,
+    ManageProjectsComponent
   ],
   imports: [
     BrowserModule,

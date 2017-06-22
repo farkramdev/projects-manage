@@ -2,3 +2,17 @@ input[type="text"],
 input[type="password"] {
     width: 300px;
 }
+
+.btnadd {
+    margin-top: 0.2em;
+    margin-left: -18em;
+    position: absolute;
+    cursor: pointer;
+    z-index: 999;
+    outline: none;
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}

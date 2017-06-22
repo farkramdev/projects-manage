@@ -5,7 +5,8 @@ export const UrlConfig = {
     Subject: 'subjects',
     Advisor: 'advisors',
     Student: 'students',
-    ProjectManages:'project-manages'
+    ProjectManages: 'project-manages',
+    ManageExam: 'manage-exam'
     // Packages: 'packages',
     // Payments: 'payments',
     // Reports: 'reports',

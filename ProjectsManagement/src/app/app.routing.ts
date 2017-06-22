@@ -1,3 +1,5 @@
+import { ManageProjectsComponent } from './components/manage-projects/manage-projects.component';
+import { ManageExaminationComponent } from './components/manage-examination/manage-examination.component';
 import { StudentsComponent } from './components/students/students.component';
 import { AdvisorComponent } from './components/advisor/advisor.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
@@ -12,6 +14,8 @@ const routes: Routes = [
 	{ path: Url.Subject, component: SubjectsComponent },
 	{ path: Url.Advisor, component: AdvisorComponent },
 	{ path: Url.Student, component: StudentsComponent },
+	{ path: Url.ProjectManages, component: ManageProjectsComponent },
+	{ path: Url.ManageExam, component: ManageExaminationComponent },
 	// { path: Url.Home, component: AppComponent },
 	// { path: Url.Signup, component: SignupComponent, canActivate: [RequireSignin] },
 	// { path: Url.Sellwithout, component: SellwithoutComponent },

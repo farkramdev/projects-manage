@@ -5,3 +5,17 @@
 #Subject {
     width: 300px;
 }
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.btnadd {
+    margin-top: 0.2em;
+    margin-left: -18em;
+    position: absolute;
+    cursor: pointer;
+    z-index: 999;
+    outline: none;
+}
