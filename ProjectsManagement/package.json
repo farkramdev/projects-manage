@@ -9,7 +9,7 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "deploy": "ng build -prod --output-path \"C:\\inetpub\\wwwroot\\CSSProjects\\Frontend\""
+        "deploy": "ng build -prod --deploy-url \"Frontend\" --output-path \"C:\\inetpub\\wwwroot\\cssprojects\\Frontend\""
     },
     "private": true,
     "dependencies": {
