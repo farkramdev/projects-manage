@@ -67,8 +67,8 @@ export class HttpService {
 
     // Check domain is production or development : เช็คว่าที่อยู่เป็นอะไร ถ้าเรา build เป็น production หรือ development
 
-    // private address: string = environment.production ? '/api' : 'http://localhost:24480';
-    private address: string = 'http://dev.9t.com';
+    private address: string = environment.production ? '/api' : 'http://localhost:24480';
+    //private address: string = 'http://dev.9t.com';
 }
 
 // Custom response class : สร้างคลาส Response ขึ้นมาเอง
